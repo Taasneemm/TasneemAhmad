@@ -1,0 +1,53 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Add in your own customisations */
+
+/* Customisation for header and footer*/
+div {
+    background-color: #93d0f4;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-top: 15px; 
+    margin-bottom: 10px;
+}
+
+/* adjust the margin-bottom for all sections*/
+section {
+    margin-bottom: 20px;
+}
+
+/* adjust all colours for hyperlinks*/
+a {
+    color: #0079c1 ;
+}
+
+table {
+    width: 100%;  
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
+
