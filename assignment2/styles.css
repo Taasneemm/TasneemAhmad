@@ -38,6 +38,15 @@ a {
 }
 
 table {
-    width: 100%;
-    
+    width: 100%;  
+    color: black;
+    border-collapse: collapse;
 }
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+
+
