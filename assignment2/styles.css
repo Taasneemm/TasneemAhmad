@@ -39,13 +39,14 @@ a {
 
 table {
     width: 100%;  
-    color: black;
     border-collapse: collapse;
+    border: 1px solid black;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    border: 1px solid black;
 }
 
 
