@@ -21,7 +21,7 @@ if (bacData[3] > bacData[2]) {
     } else {
         console.log("Bearish");
     }
-} else {
+} else if (bacData[3] === bacData[2]) {
     console.log("neutral");
 }
 
