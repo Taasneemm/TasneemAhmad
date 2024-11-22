@@ -14,3 +14,18 @@ const disneyData = [
 ];
 
 // Write your code below
+// Finding the average closing price
+let sumOfClosingPrice = 0;
+let noOfClosingDays = 0;
+let averageClosingPrice;
+for (let dailyPriceObject of disneyData) {
+	if ("close" in dailyPriceObject) {
+		noOfClosingDays += 1;
+		sumOfClosingPrice += parseFloat(dailyPriceObject["close"]);
+	}
+}
+
+averageClosingPrice = (sumOfClosingPrice/noOfClosingDays).toFixed(2);
+
+console.log(`Average closing price of Disney is ${averageClosingPrice}`)
+
