@@ -17,7 +17,3 @@ for (let dailyPrice of amdPrices) {
 sevenDaySMA = (sumTotalPrice/noOfDays).toFixed(2);
 
 console.log(`The 7-day SMA of AMD is ${sevenDaySMA}`);
-
-
-
-
