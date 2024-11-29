@@ -1,0 +1,70 @@
+Example Question:
+p.then(value => console.log(value));
+
+Question 1:
+// Your code here
+p.then(value => console.log(value));
+
+Question 2:
+// Your code here
+p.catch(error => console.log(error))
+
+Question 3:
+// Your code here
+p.then(value => console.log(value));
+
+Question 4:
+// Your code here
+p.then(value => console.log(value.name));
+
+Question 5:
+// Your code here
+p.catch(error => console.log(error));
+
+Question 6:
+// Your code here
+p.then((value) => {
+    console.log(value)
+})
+.finally(() => {
+    console.log("Promise settled")
+})
+
+Question 7:
+// Your code here
+p.then((value) => {
+    const finalvalue = value * 2;
+    console.log(finalvalue);
+})
+
+Question 8:
+// Your code here
+p.catch(() => {
+    console.log(0);
+})
+
+Question 9:
+// Your code here
+Promise.all(promises)
+  .then((values) => {
+    console.log(values);
+  })
+
+Question 10:
+// Your code here
+Promise.race(promises)
+    .then((value) => {
+        console.log(value);
+    })
+
+Bonus Question:
+// Your code here
+const p = Promise.resolve('World');
+
+p.then((value) => 
+    new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
+        .then((newWordValue) => `${newWordValue} ${value}`)
+)
+.then((finalValue) => {
+    console.log(finalValue); 
+});
