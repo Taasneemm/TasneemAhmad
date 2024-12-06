@@ -1,10 +1,25 @@
 // root.js
 
-function PublicBlogPost() {
-
+function PublicBlogPost(props) {
+  return (
+    <BlogPost
+    title = {props.title}
+    author = {props.author}
+    date = {props.date}
+    content = {props.content}
+    />
+  )
 }
 
-function PrivateBlogPost() {
+function PrivateBlogPost(props) {
+  const privateContent = "The content of this post is private"
+  return (
+    <div className="private-posts">
+      <h2>{props.title}</h2>
+      <p className="meta">{"By " + props.author + " on " + props.date}</p>
+      <p>{privateContent}</p>
+    </div>
+  )
 
 }
 
@@ -12,19 +27,41 @@ function BlogPost(props) {
   return (
     <div className="blog-post">
       <h2>{props.title}</h2>
-      <p>{"By " + props.author + " on " + props.date}</p>
+      <p className="meta">{"By " + props.author + " on " + props.date}</p>
       <p>{props.content}</p>
     </div>
 
   )
     
-
-  
 }
 
-function BlogList() {
-
+function BlogList(props) {
+  return (
+    <div className="blog-list">
+      {props.listOfObjects.map((post)=>
+        post.private ? (
+          <PrivateBlogPost 
+          key = {post.title}
+          title = {post.title}
+          author = {post.author}
+          date = {post.date}
+          content = {post.content}
+          />
+        ) : (
+          <PublicBlogPost 
+          key = {post.title}
+          title = {post.title}
+          author = {post.author}
+          date = {post.date}
+          content = {post.content}
+          />
+        )
+      )}
+    </div>
+  )
 }
+
+
 
 function Header(props) {
   return <header>
@@ -34,35 +71,16 @@ function Header(props) {
   
 }
 
-function Footer() {
+function Footer(props) {
+  return <footer>
+    <p> &copy; {props.year} {props.title}</p>
+    
+  </footer>
 
 };
 
 function App() {
-  return <>
 
-    <div className = "App">
-
-    <Header 
-      title = "My Blog"
-      tagline = "A blog about everything"
-    />
-
-    <BlogPost 
-      title = "My First Blog Post"
-      author = "John Doe" 
-      date = "June 1, 2023"
-      content = "Welcome to my first blog post! Today, I want to share my journey into the world of blogging. It has been an exciting experience so far, and I can’t wait to see where this path leads me."
-    />
-
-    </div>
-    
-  </>
-    
-    
-  
-    
-  
   const blogPosts = [
     {
       title: 'My First Blog Post',
@@ -100,7 +118,29 @@ function App() {
       private: false
     }
   ];
+  return <>
 
+    <div className = "App">
+
+    <Header 
+      title = "My Blog"
+      tagline = "A blog about everything"
+    />
+
+    <BlogList 
+      listOfObjects = {blogPosts}
+    />
+
+    <Footer 
+      year = "2024"
+      title = "My Blog. All rights reserved."
+    />
+
+
+    </div>
+    
+  </>
+    
 };
 
 const domContainer = document.getElementById('root');
