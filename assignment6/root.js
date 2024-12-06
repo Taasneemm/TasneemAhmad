@@ -8,12 +8,30 @@ function PrivateBlogPost() {
 
 }
 
+function BlogPost(props) {
+  return (
+    <div className="blog-post">
+      <h2>{props.title}</h2>
+      <p>{"By " + props.author + " on " + props.date}</p>
+      <p>{props.content}</p>
+    </div>
+
+  )
+    
+
+  
+}
+
 function BlogList() {
 
 }
 
-function Header() {
-
+function Header(props) {
+  return <header>
+    <h1>{props.title}</h1>
+    <p>{props.tagline}</p>
+  </header>
+  
 }
 
 function Footer() {
@@ -21,6 +39,30 @@ function Footer() {
 };
 
 function App() {
+  return <>
+
+    <div className = "App">
+
+    <Header 
+      title = "My Blog"
+      tagline = "A blog about everything"
+    />
+
+    <BlogPost 
+      title = "My First Blog Post"
+      author = "John Doe" 
+      date = "June 1, 2023"
+      content = "Welcome to my first blog post! Today, I want to share my journey into the world of blogging. It has been an exciting experience so far, and I can’t wait to see where this path leads me."
+    />
+
+    </div>
+    
+  </>
+    
+    
+  
+    
+  
   const blogPosts = [
     {
       title: 'My First Blog Post',
